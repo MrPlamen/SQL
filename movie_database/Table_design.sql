@@ -31,7 +31,7 @@ runtime INT NOT NULL,
 picture_url VARCHAR(80) NOT NULL,
 budget DECIMAL(10,2),
 release_date DATE NOT NULL,
-has_subtitles TINYINT(1),
+has_subtitles BOOLEAN,    # TINYINT(1) is not supported anymore in SQL
 description TEXT
 );
 
@@ -43,17 +43,18 @@ movie_info_id INT NOT NULL UNIQUE,
 CONSTRAINT `fk_movies_countries`
 FOREIGN KEY (`country_id`) REFERENCES `countries`(`id`),
 CONSTRAINT `fk_movies_movie_info`
-FOREIGN KEY (`movie_info_id`) REFERENCES `movies_additional_info` (`id`)
+FOREIGN KEY (`movie_info_id`) REFERENCES `movies_additional_info`(`id`)
 );
 
 CREATE TABLE `movies_actors`(
 movie_id INT,
 actor_id INT,
+# PRIMARY KEY `pk_movies_actors` (`movie_id`,`actor_id`)   Composite primary key (not needed)
 KEY `pk_movies_actors`(`movie_id`,`actor_id`),
 CONSTRAINT `fk_movies_movies_actors`
 FOREIGN KEY (`movie_id`) REFERENCES `movies`(`id`),
 CONSTRAINT `fk_movies_actors_actors`
-FOREIGN KEY (`actor_id`) REFERENCES `actors`(`id`)
+FOREIGN KEY (`actor_id`) REFERENCES `actors`(`id`) 
 );
 
 CREATE TABLE `genres_movies`(
