@@ -6,4 +6,3 @@ SELECT (REVERSE(`first_name`)),
        (`country_id`),
        (3) 
 FROM `actors`
-WHERE `id` <= 10;
