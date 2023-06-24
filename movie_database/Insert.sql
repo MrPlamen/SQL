@@ -5,5 +5,4 @@ SELECT (REVERSE(`first_name`)),
        (`height` + 10),
        (`country_id`),
        (3) 
-FROM `actors`
-WHERE `id` <= 10;
+
