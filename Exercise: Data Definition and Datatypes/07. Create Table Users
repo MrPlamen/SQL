@@ -7,6 +7,9 @@ last_login_time TIME,
 is_deleted BOOLEAN
 );
 
-
-
-
+INSERT INTO `users` (`username`,`password`)
+VALUES ("rrfwr","wefwer"),
+	   ("rr1wr","w3fwer"),
+	   ("rrAwr","wefjer"),
+	   ("rrfwr","weBwer"),
+	   ("rr8wr","wefw0r");
