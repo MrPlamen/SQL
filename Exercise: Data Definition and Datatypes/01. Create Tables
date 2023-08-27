@@ -1,4 +1,4 @@
-
+CREATE DATABASE `minions`;
 
 CREATE TABLE `minions` (
 	id INT PRIMARY KEY AUTO_INCREMENT,
