@@ -1,0 +1,8 @@
+Checking for Existence of Rows
+
+In conditional logic, especially in stored procedures or functions, you might want to check if rows exist that satisfy a certain condition. 
+Using SELECT 1 can be more efficient than selecting all columns.
+
+IF EXISTS (SELECT 1 FROM employees WHERE department_id = 10) THEN
+  -- Do something if there are employees in department 10
+END IF;
